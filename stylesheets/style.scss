@@ -1,0 +1,44 @@
+@import "material";
+
+$background: #07080b;
+$foreground: #eaeaea;
+$header: #030307;
+$font: Noto Sans, serif;
+
+body {
+  all: unset;
+  background-color: $background;
+}
+
+.welcome-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcome-heading {
+  font-family: $font;
+  color: $foreground;
+  text-align: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  font-size: 3em;
+}
+
+.welcome-heading-underline {
+  border-bottom: 1px solid $foreground;
+}
+.welcome-text {
+  font-family: $font;
+  color: $foreground;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
