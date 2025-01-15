@@ -1,8 +1,11 @@
 @import "material";
 
 $background: #07080b;
-$foreground: #eaeaea;
-$header: #030307;
+$foreground: #ecd6d7;
+$foreground-inactive: #d8abac;
+$highlight-pri: #d7263d;
+$highlight-sec: #931348;
+$highlight-ter: #53093e;
 $font: Noto Sans, serif;
 
 body {
@@ -10,7 +13,44 @@ body {
   background-color: $background;
 }
 
-.welcome-section {
+.header-block {
+  position: sticky;
+  top: 0;
+  background-color: $highlight-pri;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-block-button {
+  all: unset;
+  font-size: 1em;
+  font-family: $font;
+  padding: 0.5em;
+  font-weight: bold;
+  color: $foreground-inactive;
+  background-color: $highlight-pri;
+}
+
+@keyframes header-block-button-animation {
+  from {
+  }
+
+  to {
+    background-color: $highlight-sec;
+    color: $foreground;
+  }
+}
+
+.header-block-button:hover {
+  animation-name: header-block-button-animation;
+  animation-fill-mode: forwards;
+  animation-duration: 0.25s;
+  cursor: pointer;
+}
+
+.welcome-frame {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,9 +63,15 @@ body {
   flex-direction: column;
 }
 
-.welcome-heading {
+.welcome-image {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  width: 30%;
+}
+
+.welcome-heading-text {
   font-family: $font;
-  color: $foreground;
+  color: $highlight-pri;
   text-align: center;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -37,8 +83,25 @@ body {
 }
 .welcome-text {
   font-family: $font;
-  color: $foreground;
+  color: $foreground-inactive;
   text-align: center;
-  line-height: 1.5rem;
 }
 
+.divider-arrow {
+  position: absolute;
+  top: 100%;
+  height: 24em;
+  aspect-ratio: 1;
+  background: $highlight-pri;
+  transform: translateY(-100%);
+}
+
+.left-divider-arrow {
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  left: 0;
+}
+
+.right-divider-arrow {
+  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  right: 0;
+}
