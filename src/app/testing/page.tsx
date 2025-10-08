@@ -1,11 +1,15 @@
 import Image from 'next/image'
+import {CookingPotIcon, MailIcon, NotebookIcon, VideoIcon, YoutubeIcon} from "lucide-react";
 
 export default function TestPage() {
     return (
         <>
             <div className='flex flex-col items-center justify-center space-y-5' style={{paddingTop: 5 + 'em', paddingBottom: 10 + 'em'}}>
                 <h1 className='font-extrabold'>My Obsession with Artisanal Croissants</h1>
-                <h2>Recipes and how to make them</h2>
+                <div className='flex flex-row items-center justify-center space-x-2'>
+                    <CookingPotIcon/>
+                    <h2> Recipes and how to make them</h2>
+                </div>
                 <div className='flex flex-row items-center justify-center space-x-6'>
                     <Image src={'/croissant.png'} alt={"Artisanal Croissant"} width="256" height="256"/>
                     <div className='flex flex-col items-center justify-center space-y-3'>
@@ -27,16 +31,22 @@ export default function TestPage() {
                         </p>
                     </div>
                 </div>
-                <p className='w-192'>
-                    If you want to learn how to make your own artisanal croissants, you can check out&nbsp;
-                    <a href={'https://www.emmafontanella.com/the-easiest-croissants'}
-                       className='underline text-blue-400'>Emma Fontanella&#39;s</a>&nbsp;
-                    web page for instructions on how to make a nice croissant.
-                </p>
-                <p className='w-192'>
-                    If you are more of a visual learner, <b className='font-bold'>try watching the following YouTube
-                    video</b>:
-                </p>
+                <div className='flex flex-row items-center justify-center space-x-2'>
+                    <NotebookIcon/>
+                    <p className='w-192'>
+                        If you want to learn how to make your own artisanal croissants, you can check out&nbsp;
+                        <a href={'https://www.emmafontanella.com/the-easiest-croissants'}
+                           className='underline text-blue-400'>Emma Fontanella&#39;s</a>&nbsp;
+                        web page for instructions on how to make a nice croissant.
+                    </p>
+                </div>
+                <div className='flex flex-row items-center justify-center space-x-2'>
+                    <VideoIcon/>
+                    <p className='w-192'>
+                        If you are more of a visual learner, <b className='font-bold'>try watching the following YouTube
+                        video</b>:
+                    </p>
+                </div>
                 <iframe width="720" height="405" className='p-5 bg-black rounded-md'
                         src="https://www.youtube-nocookie.com/embed/RlFBTrqea2g?si=UUdGAvFfKFQ_lDPb"
                         title="YouTube video player" frameBorder="0"
@@ -53,10 +63,16 @@ export default function TestPage() {
                         src="https://open.spotify.com/embed/playlist/1T46jt8M7OnXs4ZdItcpuh?utm_source=generator"
                         frameBorder="0" allowFullScreen
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy"></iframe>
-                <p className='w-192'>
-                    Want more croissant inspiration? Reach out to me at <a className='text-blue-400 underline' href="mailto:contact.ayimay@proton.me">my contact E-Mail</a>
-                </p>
+                        loading="lazy">
+                </iframe>
+                <div className='flex flex-col space-x-2'>
+                    <p className='w-192'>
+                        Want more croissant inspiration? Reach out to me!
+                    </p>
+                    <div className='flex flex-row space-x-2'>
+                        <MailIcon/> <a className='text-blue-400 underline' href="mailto:contact.ayimay@proton.me">My contact E-Mail</a>
+                    </div>
+                </div>
             </div>
         </>
     )
